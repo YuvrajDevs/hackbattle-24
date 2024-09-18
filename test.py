@@ -7,12 +7,11 @@ import wavio as wv
 freq = 44100
 
 # Recording duration
-duration = 10
+duration = 5
 
 # Start recorder with the given values 
 # of duration and sample frequency
-recording = sd.rec(int(duration * freq), 
-				samplerate=freq, channels=2)
+recording = sd.rec(int(duration * freq), samplerate=freq, channels=2)
 
 # Record audio for the given number of seconds
 sd.wait()

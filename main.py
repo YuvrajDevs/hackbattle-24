@@ -13,15 +13,17 @@ pipe = pipeline("automatic-speech-recognition", model="openai/whisper-small.en")
 
 def record_user_audio(duration=20, freq=44100):
     print("Recording started...")
-    recording = sd.rec(int(duration * freq), samplerate=freq, channels=1)
+    # recording = sd.rec(int(duration * freq), samplerate=freq, channels=1)
+    recording = sd.rec(int(duration * freq), samplerate=freq, channels=2)
     sd.wait()
     print("Recording finished.")
     
-    audio_filename = "patient_recording.wav"
-    write(audio_filename, freq, recording)
-    wv.write(audio_filename, recording, freq, sampwidth=1)
+    audio_filename1 = "patient_recording0.wav"
+    audio_filename2 = "patient_recording1.wav"
+    write(audio_filename1, freq, recording)
+    wv.write(audio_filename2, recording, freq, sampwidth=2)
     
-    return audio_filename
+    return audio_filename2
 
 def recognize_speech_from_file(audio_file):
     print(f"Recognizing speech from {audio_file} using Whisper model...")
