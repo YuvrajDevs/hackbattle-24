@@ -11,7 +11,7 @@ from vocablist import vocab_list
 # Initialize Whisper pipeline
 pipe = pipeline("automatic-speech-recognition", model="openai/whisper-small.en")
 
-def record_user_audio(duration=20, freq=44100):
+def record_user_audio(duration=30, freq=44100):
     print("Recording started...")
     # recording = sd.rec(int(duration * freq), samplerate=freq, channels=1)
     recording = sd.rec(int(duration * freq), samplerate=freq, channels=2)
@@ -97,12 +97,6 @@ def process_recognized(target_list, recognized_text):
     recognized_words = recognized_text.lower().split()
     target_words = [word.lower() for word in target_list]
 
-    print("Recognized Words:")
-    print(" ".join(recognized_words))
-
-    print("\nTarget Word List:")
-    print(" ".join(target_words))
-
     # Track which target words have been matched
     matched_words = set()
 
@@ -115,6 +109,7 @@ def process_recognized(target_list, recognized_text):
                 break  # Move to the next recognized word after a match
 
     print(f"\nNumber of words not recalled: {count_not_recalled}")
+    return count_not_recalled 
 
 def main():
     word_list = generate_word_list(vocab_list)
@@ -126,7 +121,8 @@ def main():
     recognized_text = recognize_speech_from_file(audio_file)
     
     if recognized_text:
-        process_recognized(word_list, recognized_text)
+        result=process_recognized(word_list, recognized_text)
+        print(result) #the final score for this round
     else:
         print("No text was recognized. Please try again.")
 
