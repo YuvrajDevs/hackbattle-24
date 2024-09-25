@@ -13,7 +13,7 @@ const styles = {
 const Page = () => {
   const canvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(180); // 3 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(10); // 3 minutes in seconds
 
   useEffect(() => {
     let timer;
@@ -30,7 +30,7 @@ const Page = () => {
   const handleStartDrawing = () => {
     canvasRef.current.clearCanvas();
     setIsDrawing(true);
-    setTimeLeft(180);
+    setTimeLeft(10);
   };
 
   
@@ -45,19 +45,26 @@ const Page = () => {
     canvasRef.current
       .exportImage("jpeg")
       .then(data => {
-        // Here we would typically send the data to the server
-        console.log("Image data:", data);
-        // For now, we'll just download it to the user's default download location
-        const link = document.createElement('a');
-        link.href = data;
-        link.download = 'circle_sketch.jpg';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // Log the base64 string representation of the image
+        console.log("Base64 image data:", data);
+        
+        // Convert base64 to Blob (keeping this part for reference)
+        const base64Data = data.split(',')[1];
+        const blob = b64toBlob(base64Data, 'image/jpeg');
+        
+        // Create a FileReader to read the Blob as ArrayBuffer
+        const reader = new FileReader();
+        reader.onloadend = function() {
+          // Convert ArrayBuffer to Uint8Array
+          const uint8Array = new Uint8Array(reader.result);
+          console.log("JPEG image data (Uint8Array):", uint8Array);
+        }
+        reader.readAsArrayBuffer(blob);
+
         setIsDrawing(false);
       })
       .catch(e => {
-        console.log(e);
+        console.error("Error exporting image:", e);
       });
   };
 
@@ -97,7 +104,7 @@ const Page = () => {
         </div>
         <ReactSketchCanvas
           ref={canvasRef}
-          strokeWidth={5}
+          strokeWidth={12}
           strokeColor="red"
           style={styles}
           width="600px"
@@ -112,3 +119,22 @@ const Page = () => {
 }
 
 export default Page
+
+// Helper function to convert base64 to Blob
+const b64toBlob = (b64Data, contentType = '', sliceSize = 512) => {
+  const byteCharacters = atob(b64Data);
+  const byteArrays = [];
+
+  for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+    const slice = byteCharacters.slice(offset, offset + sliceSize);
+    const byteNumbers = new Array(slice.length);
+    for (let i = 0; i < slice.length; i++) {
+      byteNumbers[i] = slice.charCodeAt(i);
+    }
+    const byteArray = new Uint8Array(byteNumbers);
+    byteArrays.push(byteArray);
+  }
+
+  const blob = new Blob(byteArrays, { type: contentType });
+  return blob;
+};
