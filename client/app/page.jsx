@@ -15,7 +15,10 @@ export default function MainPage() {
     <>
       <div className="flex-col justify-center items-center">
         {/* <WordRecall/> */}
-        <Ideational/>        
+        {/* <Ideational/>         */}
+        <Link href="/wordRecall" >
+          <Button name='Begin Test?'/>
+        </Link>
         
       </div>
     </>
