@@ -11,7 +11,7 @@ const Page = () => {
       <TaskHeading heading='Constructional Praxis'/>
       <SubHeading subHeading='Instructions' />
       <Paragraph para={instruction} />
-      <Link href="/constructionalPraxis/drawingtask">
+      <Link href="/constructionalPraxis/draw">
         <Button name='Start Test'/>
       </Link>
     </section>

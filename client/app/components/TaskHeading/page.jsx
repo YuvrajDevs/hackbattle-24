@@ -1,6 +1,6 @@
 import React from 'react'
 
-const page = ({heading}) => {
+const TaskHeading = ({heading}) => {
   return (
     <h1 className='text-[2.5rem] my-10 font-bold text-center'>
       {heading}
@@ -8,4 +8,4 @@ const page = ({heading}) => {
   )
 }
 
-export default page
+export default TaskHeading
