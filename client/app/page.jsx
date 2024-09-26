@@ -1,5 +1,5 @@
 // app/page.jsx
-import Link from 'next/link';
+// import Link from 'next/link';
 import Navbar from './components/Navbar/page';
 import Page from './constructionalpraxis/page';
 import Speaking from './speaking/page';
@@ -9,6 +9,8 @@ import TaskHeading from './components/TaskHeading/page';
 import Subheading from './components/SubHeading/page';
 import Button from './components/Button/page';
 // import Wordrecall from './components/Wordrecall/page';
+import Button from './components/Button/page';
+import Link from 'next/link';
 
 export default function MainPage() {
   return (
