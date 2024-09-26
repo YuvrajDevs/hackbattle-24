@@ -6,13 +6,19 @@ import WordRecall from './namingTask/page';
 import Speaking from './speaking/page';
 import Ideational from './ideationalpraxis/page';
 // import Wordrecall from './components/Wordrecall/page';
+import Button from './components/Button/page';
+import Link from 'next/link';
 
 export default function MainPage() {
   return (
     <>
-      <div className="flex justify-center items-center min-h-[calc(100vh-64px)]">
+      <div className="flex-col justify-center items-center">
         {/* <WordRecall/> */}
-        <Ideational/>        
+        {/* <Ideational/>         */}
+        <p>Hello!</p>
+        <Link href="/wordRecall" >
+          <Button name='Begin Test?'/>
+        </Link>
         
       </div>
     </>
