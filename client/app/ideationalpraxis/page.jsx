@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const Ideational = () => {
   return (
-    <section className='flex flex-col items-center justify-center mt-10'>
+    <section className='flex flex-col mx-10 items-center justify-center mt-10'>
       <TaskHeading heading='Ideational Praxis Task' />
       <SubHeading subHeading='Instruction for Instructor' />
       <ul className="list-disc mt-4">
