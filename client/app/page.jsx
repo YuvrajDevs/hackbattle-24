@@ -1,8 +1,7 @@
 // app/page.jsx
 // import Link from 'next/link';
 import Navbar from './components/Navbar/page';
-import Page from './contructionalPraxis/page';
-import WordRecall from './namingTask/page';
+import Page from './constructionalpraxis/page';
 import Speaking from './speaking/page';
 import Ideational from './ideationalpraxis/page';
 import Comprehension from './comprehension/page';
