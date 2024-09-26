@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const Speaking = () => {
   return (
-    <section className='flex flex-col items-center justify-center mt-10'>
+    <section className='flex flex-col mx-10 items-center justify-center mt-10'>
       <TaskHeading heading='Speaking ability' />
       <SubHeading subHeading='Instruction for Instructor' />
       <ul className="list-disc mt-4">

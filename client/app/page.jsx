@@ -5,6 +5,7 @@ import Page from './contructionalPraxis/page';
 import WordRecall from './namingTask/page';
 import Speaking from './speaking/page';
 import Ideational from './ideationalpraxis/page';
+import Comprehension from './comprehension/page';
 // import Wordrecall from './components/Wordrecall/page';
 
 export default function MainPage() {
@@ -12,7 +13,8 @@ export default function MainPage() {
     <>
       <div className="flex justify-center items-center min-h-[calc(100vh-64px)]">
         {/* <WordRecall/> */}
-        <Ideational/>        
+        {/* <Ideational/>*/}
+        <Comprehension/>
         
       </div>
     </>
