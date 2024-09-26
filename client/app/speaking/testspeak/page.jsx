@@ -6,7 +6,7 @@ import React from 'react'
 
 export default function Testspeak() {
   return (
-    <section className='flex flex-col items-center gap justify-center mt-10'>
+    <section className='flex flex-col items-center mx-10 gap justify-center mt-10'>
       <TaskHeading heading='Speaking ability' />
       <Subheading subHeading='Scoring' />
       <div className='flex flex-col '>
@@ -14,27 +14,27 @@ export default function Testspeak() {
         <tbody>
           <tr>
             <td className='pr-6'>0</td>
-            <td>All components performed correctly</td>
+            <td>No instances when it is difficult to understand the subject</td>
           </tr>
           <tr>
             <td className='pr-6'>1</td>
-            <td>Failure to perform 1 component</td>
+            <td>Very mild – one instance of lack of understandability</td>
           </tr>
           <tr>
             <td className='pr-6'>2</td>
-            <td>Failure to perform 2 components</td>
+            <td>Mild – subject has difficulty less than 25% of the time</td>
           </tr>
           <tr>
             <td className='pr-6'>3</td>
-            <td>Failure to perform 3 components</td>
+            <td>Moderate – subject has difficulty 25-50% of the time</td>
           </tr>
           <tr>
             <td className='pr-6'>4</td>
-            <td>Failure to perform 4 components</td>
+            <td>Moderately severe – subject has difficulty 50% of the time</td>
           </tr>
           <tr>
             <td className='pr-6'>5</td>
-            <td>Failure to perform 5 components</td>
+            <td>Severe – one or two word utterance; fluent, but empty speech; mute</td>
           </tr>
         </tbody>
       </table>

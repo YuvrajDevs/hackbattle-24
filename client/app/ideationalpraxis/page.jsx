@@ -16,7 +16,7 @@ const Ideational = () => {
         <li>Mark the subject's performance on each step using the provided worksheet.</li>
         <li>Ensure the task is conducted with minimal additional prompts, focusing on the subject's ability to follow the sequence.</li>
       </ul>
-      <Link href='/speaking/testspeak'>
+      <Link href='/ideationalpraxis/testideational'>
       <Button name='Submit'/>
       </Link>
       

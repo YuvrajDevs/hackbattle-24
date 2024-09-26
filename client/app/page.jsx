@@ -5,6 +5,7 @@ import Page from './contructionalPraxis/page';
 import WordRecall from './namingTask/page';
 import Speaking from './speaking/page';
 import Ideational from './ideationalpraxis/page';
+import Comprehension from './comprehension/page';
 // import Wordrecall from './components/Wordrecall/page';
 import Button from './components/Button/page';
 import Link from 'next/link';
@@ -14,11 +15,7 @@ export default function MainPage() {
     <>
       <div className="flex-col justify-center items-center">
         {/* <WordRecall/> */}
-        {/* <Ideational/>         */}
-        <p>Hello!</p>
-        <Link href="/wordRecall" >
-          <Button name='Begin Test?'/>
-        </Link>
+        <Ideational/>        
         
       </div>
     </>
