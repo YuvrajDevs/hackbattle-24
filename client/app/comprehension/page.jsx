@@ -2,6 +2,7 @@ import React from 'react'
 import TaskHeading from '../components/TaskHeading/page'
 import SubHeading from '../components/SubHeading/page'
 import Button from '../components/Button/page'
+import Link from 'next/link'
 
 const Comprehension = () => {
   return (
@@ -14,7 +15,9 @@ const Comprehension = () => {
         <li>Do not include finger and object naming tasks in this rating.</li>
         <li>Ensure that the rating reflects only the subject's ability to retrieve specific words during conversation, not their general communication abilities.</li>
       </ul>
-      <Button name='Start Test'/>
+      <Link href='comprehension/testcomp'>
+       <Button name='Start Test'/>
+      </Link>
     </section>
   )
 }
